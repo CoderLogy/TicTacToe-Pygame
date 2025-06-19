@@ -1,2 +1,2 @@
 # TicTacToe Pygame
-TicTacToe Game
+TicTacToe Game implemented in pygame

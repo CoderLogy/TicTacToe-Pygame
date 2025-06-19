@@ -40,8 +40,7 @@ def render_board():
                 center_y = BOARD_POS[1] + i * CELL_SIZE + CELL_SIZE // 2
                 rect = img.get_rect(center=(center_x, center_y))
                 
-                # Optional offset to tweak positioning
-                offset_x = 10  # try values like -5 or +5 if needed
+                offset_x = 10  
                 offset_y = 0
                 rect.center = (center_x + offset_x, center_y + offset_y)
                 
@@ -139,7 +138,6 @@ pygame.display.update()
 
 while True:
         for event in pygame.event.get():
-            MUSIC.play()
             if event.type == pygame.QUIT:
                 pygame.quit()
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -160,4 +158,5 @@ while True:
                             pygame.display.update()
                 else:
                     reset_game()
-
+            if not pygame.mixer.get_busy():
+                MUSIC.play()
